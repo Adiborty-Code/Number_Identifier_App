@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Number Identifier (React + Gemini + Firebase)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and fast React web app where users can **upload an image of a handwritten/printed number**, and the app predicts the digit using **Google’s Gemini 2.5 Flash model**.
+Firebase Authentication provides secure login, and Firebase Storage safely stores the uploaded images.
+The entire application is deployed on **Netlify** for seamless global access.
 
-## Available Scripts
+**Live App:** [https://number-identifier.netlify.app](https://number-identifier.netlify.app)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **Digit Prediction** using Gemini 2.5 Flash
+* **Image Upload** directly from your device
+* **Firebase Authentication** (Email/Password Login)
+* **Firebase Storage** for image handling
+* Lightning-fast and minimal UI
+* Deployed on Netlify with smooth CI/CD
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Frontend**
 
-### `npm run build`
+* React.js
+* JavaScript
+* CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Backend / Services**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Firebase Authentication
+* Firebase Storage
+* Google Gemini API (Gemini-2.5-Flash)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Deployment**
 
-### `npm run eject`
+* Netlify
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation & Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone the repository
+git clone https://github.com/Adiborty-Code/Number_Identifier_App.git
+cd number-identifier
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Run the development server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Configuration
 
-### Code Splitting
+Create a `.env` file in the root folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+REACT_APP_FIREBASE_API_KEY=your-key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your-domain
+REACT_APP_FIREBASE_PROJECT_ID=your-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your-bucket
+REACT_APP_FIREBASE_SENDER_ID=your-sender
+REACT_APP_FIREBASE_APP_ID=your-app-id
 
-### Analyzing the Bundle Size
+REACT_APP_GEMINI_API_KEY=your-gemini-api-key
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+##  How It Works
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. User logs in using Firebase Authentication
+2. User uploads an image
+3. Image is stored in Firebase Storage
+4. The file URL is sent to **Gemini 2.5 Flash**
+5. Gemini analyzes the image and predicts the **digit**
+6. Prediction is displayed in the UI
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Project Structure
 
-### Deployment
+```
+/
+├── src/
+│   ├── components/
+│   ├── App.js
+│   └── styles/
+├── public/
+├── package.json
+├── package-lock.json
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Future Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Add user history (saved predictions)
+* Add drag-and-drop uploads
+* Improve UI animations
+
+---
+
+## License
+
+This project is open-source and available under the MIT License.
+
+---
+
+## Contributing
+
+Pull requests are welcome!
+Feel free to open issues for suggestions or bugs.
+
+---
+
+## Live Demo
+
+**[https://number-identifier.netlify.app](https://number-identifier.netlify.app)**
