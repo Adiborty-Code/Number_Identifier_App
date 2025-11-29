@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
-const GEMINI_API_KEY = 'AIzaSyBdf3CxecnYnXSzp_4UOIldfGyg6Vaskww';
+const GEMINI_API_KEY = 'AIzaSyD085j3k1NMwnkpHxplf5zAn-X7FDmFBLc';
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
 export default function App() {
